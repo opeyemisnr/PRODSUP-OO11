@@ -1,0 +1,2 @@
+# PRODSUP-OO11
+If you are building a Gradle or Maven based project, you are more than likely using the Maven Surefire plugin to generate test reports in XML format. CircleCI makes it easy to collect these reports. You just need to add the followng to the circle.yml file in your project.  test:   post:     - mkdir -p $CIRCLE_TEST_REPORTS/junit/     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
